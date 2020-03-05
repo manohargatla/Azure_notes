@@ -9,7 +9,7 @@
 * Do I need to archive
 ### 4. Performance:
 * How to improve Performance of Disks/Storage.
-### 5. Dat0abases:
+### 5. Databases:
 * Databases rely a lot on Disks
 
 

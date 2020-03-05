@@ -17,6 +17,8 @@ while ($i) {
         Write-Host "Re-Enter  Network_space "
         $Address_prefix = Read-Host -Prompt 'Re-Enter' 
     }
+
+    
 }
 $subnet_addr_prefix1 = Read-Host -Prompt "enter subnet address prefix"
 $subnet_addr_prefix2 = Read-Host -Prompt "enter subnet address prefix"
