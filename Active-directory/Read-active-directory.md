@@ -65,3 +65,74 @@ Can be applied at
 
 
 [Refer-for-more](https://directdevops.blog/2019/11/16/azure-classroom-series-16-nov-2019/)
+
+
+
+
+
+## Create multiple user using [UserCreateTemplate.csv](UserCreateTemplate.csv)
+
+#### Requried format 
+
+```version:v1.0,,,,```
+----
+```
+Name (example: Chris Green) [displayName] *,
+User name (example: chris@contoso.com) [userPrincipalName] *,
+Initial password [passwordProfile] *,
+Block sign in (Yes/No) [accountEnabled] *,
+First name [givenName],Last name [surname],
+Job title [jobTitle],
+Department [department],
+Usage location [usageLocation],
+Street address [streetAddress],
+State or province [state],
+Country or region [country],
+Office [physicalDeliveryOfficeName],
+City [city],
+ZIP or postal code [postalCode],
+Office phone [telephoneNumber],
+Mobile phone [mobile]
+```
+
+---
+#### Example:
+
+```
+username,user@domain.onmicrosoft.com,password,no,firstname,lastname,Role,department,location,streat_address,state,
+country,company,companylocation,postal-pin-code,telephone,mobilenumber
+
+````
+
+
+
+# custom Role in Json format
+
+```
+{
+    "properties": {
+        "roleName": "Name of the role",
+        "description": "Description",
+        "assignableScopes": [
+            "/subscriptions/79ece882-8abc-4219-ab3d-8c27a293e1ab"
+        ],
+        "permissions": [
+            {
+                "actions": [
+                    "*"
+                ],
+                "notActions": [
+                    "Microsoft.Authorization/*/Delete",
+                    "Microsoft.Authorization/*/Write",
+                    "Microsoft.Authorization/elevateAccess/Action",
+                    "Microsoft.Blueprint/blueprintAssignments/write",
+                    "Microsoft.Blueprint/blueprintAssignments/delete"
+                ],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
+}
+
+``` 
